@@ -1,0 +1,30 @@
+Lights Out - peli
+=================
+
+Toteutetaan versio Lights Out - pelist‰. Pelin pelilaudassa on valoja 
+neliˆmatriisimuodossa ja valoja kytket‰‰n p‰‰lle ja pois p‰‰lt‰ niit‰
+painamalla. Kullakin painalluksella lampun nelj‰ vierustoveriakin 
+kytkeytyv‰t p‰‰lle tai pois p‰‰lt‰. Pelin tavoitteena on saada kaikki
+valot sammuksiin. 
+
+Ajan salliessa peliin toteutetaan seuraavat ominaisuudet:
+- mahdollisuus valita pelilaudan koko.
+- mahdollisuus palata kesken pelin alkutilanteeseen, jossa kaikki valot p‰‰ll‰.
+- mahdollisuus aloittaa peli satunnaisesti luodusta tilanteesta.
+- mahdollisuus pelata peli‰ normaalin pelilaudan sijaan esim. Mˆbiuksen nauhalla,
+  Toruksella tai Kleinin pullon pinnalla.
+- siirtolaskuri
+
+K‰ytt‰j‰t: Pelaaja
+
+K‰ytt‰j‰n toiminnot:
+
+- Pelin aloitus
+ - Pelilaudan koon valinta
+ - Pelin aloitustilanteen valinta
+ - Pelilaudan muodon valinta
+
+- Pelaaminen
+ - Lamppujen p‰‰lle ja pois kytkent‰
+ - Pelitilanteen "sekoittaminen"
+ - Pelin alkutilanteeseen palaaminen
