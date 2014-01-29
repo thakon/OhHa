@@ -1,8 +1,11 @@
 package lightsout.domain;
 
+import java.util.Random;
+
 public class Board {
 
     protected Bulb[][] board;
+    private Random random;
 
     public Board() {
         this.board = new Bulb[5][5];
@@ -11,6 +14,7 @@ public class Board {
                 this.board[i][j] = new Bulb();
             }
         }
+        this.random = new Random();
     }
 
     public boolean isSolved() {
@@ -23,12 +27,24 @@ public class Board {
         }
         return true;
     }
-    
+
     public boolean properIndices(int x, int y) {
         if (x >= 0 && y >= 0 && x < this.board.length && y < this.board[x].length) {
             return true;
         }
         return false;
+    }
+
+    public void shuffle() {
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                if (random.nextDouble() < 0.5) {
+                    this.board[i][j].setIsLit(true);
+                } else {
+                    this.board[i][j].setIsLit(false);
+                }
+            }
+        }
     }
 
     public void toggle(int x, int y) {

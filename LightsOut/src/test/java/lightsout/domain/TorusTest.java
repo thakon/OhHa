@@ -35,10 +35,10 @@ public class TorusTest {
     @Test
     public void toggleTest() {
         torus.toggle(0, 0);
-        assert (!torus.board[0][0].isLit());
-        assert (!torus.board[1][0].isLit());
-        assert (!torus.board[0][1].isLit());
-        assert (!torus.board[0][4].isLit());
-        assert (!torus.board[4][0].isLit());
+        assertFalse(torus.board[0][0].isLit());
+        assertFalse(torus.board[1][0].isLit());
+        assertFalse(torus.board[0][1].isLit());
+        assertFalse(torus.board[0][4].isLit());
+        assertFalse(torus.board[4][0].isLit());
     }
 }

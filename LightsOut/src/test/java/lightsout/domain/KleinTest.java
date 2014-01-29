@@ -34,10 +34,10 @@ public class KleinTest {
     @Test
     public void toggleTest() {
         klein.toggle(0, 0);
-        assert (!klein.board[0][0].isLit());
-        assert (!klein.board[0][1].isLit());
-        assert (!klein.board[1][0].isLit());
-        assert (!klein.board[4][0].isLit());
-        assert (!klein.board[4][4].isLit());
+        assertFalse(klein.board[0][0].isLit());
+        assertFalse(klein.board[0][1].isLit());
+        assertFalse(klein.board[1][0].isLit());
+        assertFalse(klein.board[4][0].isLit());
+        assertFalse(klein.board[4][4].isLit());
     }
 }

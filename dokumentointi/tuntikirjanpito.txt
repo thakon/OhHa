@@ -3,3 +3,4 @@ Tuntikirjanpito
 16.01. ~2 tuntia, projektin aloittaminen
 24.01. ~2 tuntia, perusohjelmalogiikan kirjoittamista
 25.01. ~2 tuntia, testejä ja luokkakaavion ensimmäinen versio
+28.01. ~1 tunti, testien muokkausta

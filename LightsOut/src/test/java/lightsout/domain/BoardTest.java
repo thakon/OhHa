@@ -35,7 +35,7 @@ public class BoardTest {
     public void constructorWorksProperly() {
         for (Bulb[] row : board.board) {
             for (Bulb b : row) {
-                assert (b.isLit());
+                assertTrue(b.isLit());
             }
         }
     }
@@ -47,17 +47,17 @@ public class BoardTest {
                 b.toggle();
             }
         }
-        assert (board.isSolved());
+        assertTrue(board.isSolved());
     }
 
     @Test
     public void toggleTest() {
         board.toggle(1, 1);
-        assert (!board.board[1][1].isLit());
-        assert (!board.board[0][1].isLit());
-        assert (!board.board[1][0].isLit());
-        assert (!board.board[2][1].isLit());
-        assert (!board.board[1][2].isLit());
+        assertFalse(board.board[1][1].isLit());
+        assertFalse(board.board[0][1].isLit());
+        assertFalse(board.board[1][0].isLit());
+        assertFalse(board.board[2][1].isLit());
+        assertFalse(board.board[1][2].isLit());
     }
 
     @Test

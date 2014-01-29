@@ -42,10 +42,10 @@ public class MoebiusTest {
     @Test
     public void toggleTest() {
         moebius.toggle(1, 0);
-        assert(!moebius.board[1][0].isLit());
-        assert(!moebius.board[0][0].isLit());
-        assert(!moebius.board[2][0].isLit());
-        assert(!moebius.board[1][1].isLit());
-        assert(!moebius.board[3][4].isLit());
+        assertFalse(moebius.board[1][0].isLit());
+        assertFalse(moebius.board[0][0].isLit());
+        assertFalse(moebius.board[2][0].isLit());
+        assertFalse(moebius.board[1][1].isLit());
+        assertFalse(moebius.board[3][4].isLit());
     }
 }

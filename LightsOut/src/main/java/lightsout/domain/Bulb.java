@@ -15,4 +15,10 @@ public class Bulb {
     public void toggle() {
         this.isLit = !this.isLit;
     }
+
+    public void setIsLit(boolean isLit) {
+        this.isLit = isLit;
+    }
+    
+    
 }
