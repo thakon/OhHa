@@ -29,20 +29,17 @@ public class Board {
     }
 
     public boolean properIndices(int x, int y) {
-        if (x >= 0 && y >= 0 && x < this.board.length && y < this.board[x].length) {
+        if (x >= 0 && y >= 0
+                && x < this.board.length && y < this.board[x].length) {
             return true;
         }
         return false;
     }
 
     public void shuffle() {
-        for (int i = 0; i < this.board.length; i++) {
-            for (int j = 0; j < this.board[i].length; j++) {
-                if (random.nextDouble() < 0.5) {
-                    this.board[i][j].setIsLit(true);
-                } else {
-                    this.board[i][j].setIsLit(false);
-                }
+        for (Bulb[] row : this.board) {
+            for (Bulb b : row) {
+                b.setIsLit(random.nextBoolean());
             }
         }
     }

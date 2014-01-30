@@ -4,3 +4,7 @@ Tuntikirjanpito
 24.01. ~2 tuntia, perusohjelmalogiikan kirjoittamista
 25.01. ~2 tuntia, testejä ja luokkakaavion ensimmäinen versio
 28.01. ~1 tunti, testien muokkausta
+30.01. ~1 tunti, poistettu luokka Bulb ja korvattu laudan Bulb-matriisi boolean-matriisilla.
+                 Luokalla Bulb ei tuntunut olevan mitään perustettu, sisältönä ainoastaan totuusarvo.
+30.01. ~1 tunti, palautettu luokka Bulb :)
+30.01. ~3 tuntia, mutanttien kimpussa sekä uusi luokkakaavio

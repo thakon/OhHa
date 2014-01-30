@@ -41,10 +41,11 @@ public class BoardTest {
     }
 
     @Test
-    public void solvedCheckerWorksProperly() {
+    public void solveCheckerWorksProperly() {
+        assertFalse(board.isSolved());
         for (Bulb[] row : board.board) {
             for (Bulb b : row) {
-                b.toggle();
+                b.setIsLit(false);
             }
         }
         assertTrue(board.isSolved());
@@ -58,5 +59,29 @@ public class BoardTest {
         assertFalse(board.board[1][0].isLit());
         assertFalse(board.board[2][1].isLit());
         assertFalse(board.board[1][2].isLit());
+    }
+    
+    @Test
+    public void toggleTestCorner() {
+        board.toggle(4, 4);
+        assertFalse(board.board[4][4].isLit());
+        assertFalse(board.board[3][4].isLit());
+        assertFalse(board.board[4][3].isLit());
+    }
+    
+    @Test
+    public void toggleTestWrongInput(){
+        board.toggle(5, 4);
+        board.toggle(4, 5);
+        assertTrue(board.board[4][4].isLit());
+    }
+
+    @Test
+    public void indicesTest() {
+        assertFalse(board.properIndices(4, 5));
+        assertFalse(board.properIndices(-1, 0));
+        assertTrue(board.properIndices(0, 0));
+        assertTrue(board.properIndices(4, 4));
+        assertTrue(board.properIndices(1, 1));
     }
 }

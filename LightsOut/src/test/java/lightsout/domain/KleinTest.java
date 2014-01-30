@@ -32,12 +32,34 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTest() {
+    public void toggleTestLowerLeftCorner() {
         klein.toggle(0, 0);
         assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[0][1].isLit());
         assertFalse(klein.board[1][0].isLit());
+        assertFalse(klein.board[0][1].isLit());
         assertFalse(klein.board[4][0].isLit());
         assertFalse(klein.board[4][4].isLit());
     }
+    
+    @Test
+    public void toggleTestUpperRightCorner() {
+        klein.toggle(4, 4);
+        assertFalse(klein.board[4][4].isLit());
+        assertFalse(klein.board[4][3].isLit());
+        assertFalse(klein.board[3][4].isLit());
+        assertFalse(klein.board[0][0].isLit());
+        assertFalse(klein.board[0][4].isLit());
+    }
+    
+    @Test
+    public void toggleTestSide() {
+        klein.toggle(1, 0);
+        assertFalse(klein.board[1][0].isLit());
+        assertFalse(klein.board[2][0].isLit());
+        assertFalse(klein.board[1][1].isLit());
+        assertFalse(klein.board[0][0].isLit());
+        assertFalse(klein.board[3][4].isLit());
+    }
+    
+    
 }

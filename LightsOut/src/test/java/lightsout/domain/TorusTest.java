@@ -33,11 +33,21 @@ public class TorusTest {
     }
 
     @Test
-    public void toggleTest() {
+    public void toggleTestLowerLeftCorner() {
         torus.toggle(0, 0);
         assertFalse(torus.board[0][0].isLit());
         assertFalse(torus.board[1][0].isLit());
         assertFalse(torus.board[0][1].isLit());
+        assertFalse(torus.board[0][4].isLit());
+        assertFalse(torus.board[4][0].isLit());
+    }
+    
+    @Test
+    public void toggleTestUpperRightCorner() {
+        torus.toggle(4, 4);
+        assertFalse(torus.board[4][4].isLit());
+        assertFalse(torus.board[3][4].isLit());
+        assertFalse(torus.board[4][3].isLit());
         assertFalse(torus.board[0][4].isLit());
         assertFalse(torus.board[4][0].isLit());
     }

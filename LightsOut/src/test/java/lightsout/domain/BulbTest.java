@@ -42,4 +42,11 @@ public class BulbTest {
         bulb.toggle();
         assertFalse(bulb.isLit());
     }
+    
+    @Test
+    public void lightGoesOn() {
+        bulb.setIsLit(false);
+        bulb.toggle();
+        assertTrue(bulb.isLit());
+    }
 }

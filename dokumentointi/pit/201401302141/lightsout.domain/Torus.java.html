@@ -47,7 +47,7 @@ padding-left: 5px;
 <body>
 
 
-<h1>Klein.java</h1>
+<h1>Torus.java</h1>
 
 <table class="src">
 
@@ -85,7 +85,7 @@ padding-left: 5px;
 <td class=''>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_3'></a>
 </td>
-<td class=''><pre><span  class=''>public class Klein extends Board {</span></pre></td></tr>
+<td class=''><pre><span  class=''>public class Torus extends Board {</span></pre></td></tr>
 
 
 
@@ -109,7 +109,7 @@ padding-left: 5px;
 <td class=''>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_5'></a>
 </td>
-<td class=''><pre><span  class=''>    public Klein() {</span></pre></td></tr>
+<td class=''><pre><span  class=''>    public Torus() {</span></pre></td></tr>
 
 
 
@@ -178,10 +178,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_11'/>
 11
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_11'>1</a>
 </td>
-<td class='covered'><pre><span  class='survived'>        if (super.properIndices(x, y)) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>        if (super.properIndices(x, y)) {</span></pre></td></tr>
 
 
 
@@ -190,10 +190,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_12'/>
 12
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_12'>1</a>
 </td>
-<td class='covered'><pre><span  class='survived'>            super.toggle(x, y);</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            super.toggle(x, y);</span></pre></td></tr>
 
 
 
@@ -202,10 +202,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_13'/>
 13
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_13'>1</a>
 </td>
-<td class='covered'><pre><span  class='survived'>            if (x == 0) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            if (x == 0) {</span></pre></td></tr>
 
 
 
@@ -214,10 +214,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_14'/>
 14
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_14'>2</a>
 </td>
-<td class='covered'><pre><span  class='survived'>                this.board[this.board.length - 1][y].toggle();</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>                this.board[this.board.length - 1][y].toggle();</span></pre></td></tr>
 
 
 
@@ -238,10 +238,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_16'/>
 16
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_16'>1</a>
 </td>
-<td class='covered'><pre><span  class='survived'>            if (y == 0) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            if (y == 0) {</span></pre></td></tr>
 
 
 
@@ -250,10 +250,10 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_17'/>
 17
 </td>
-<td class='survived'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_17'>4</a>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_17'>2</a>
 </td>
-<td class='covered'><pre><span  class='survived'>                this.board[this.board.length - x - 1][this.board[x].length - 1].toggle();</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>                this.board[x][this.board[x].length - 1].toggle();</span></pre></td></tr>
 
 
 
@@ -274,22 +274,22 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_19'/>
 19
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_19'>2</a>
 </td>
-<td class='covered'><pre><span  class='survived'>            if (x == this.board.length - 1) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            if (x == this.board.length - 1) {</span></pre></td></tr>
 
 
 
 <tr>
-<td class='uncovered'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_20'/>
 20
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_20'>1</a>
 </td>
-<td class='uncovered'><pre><span  class='survived'>                this.board[0][y].toggle();</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>                this.board[0][y].toggle();</span></pre></td></tr>
 
 
 
@@ -310,22 +310,22 @@ padding-left: 5px;
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_22'/>
 22
 </td>
-<td class='survived'>
+<td class='killed'>
 <a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_22'>2</a>
 </td>
-<td class='covered'><pre><span  class='survived'>            if (y == this.board[x].length - 1) {</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>            if (y == this.board[x].length - 1) {</span></pre></td></tr>
 
 
 
 <tr>
-<td class='uncovered'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@c85dc_23'/>
 23
 </td>
-<td class='survived'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_23'>3</a>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_23'>1</a>
 </td>
-<td class='uncovered'><pre><span  class='survived'>                this.board[this.board.length - x - 1][0].toggle();</span></pre></td></tr>
+<td class='covered'><pre><span  class='killed'>                this.board[x][0].toggle();</span></pre></td></tr>
 
 
 
@@ -388,7 +388,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_11'/> 
 
-<p class='SURVIVED'>negated conditional : SURVIVED</p> 
+<p class='KILLED'>negated conditional : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -399,7 +399,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_12'/> 
 
-<p class='SURVIVED'>removed call to lightsout/domain/Board::toggle : SURVIVED</p> 
+<p class='KILLED'>removed call to lightsout/domain/Board::toggle : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -410,7 +410,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_13'/> 
 
-<p class='SURVIVED'>negated conditional : SURVIVED</p> 
+<p class='KILLED'>negated conditional : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -421,7 +421,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_14'/> 
 
-<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.KleinTest.lightsout.domain.KleinTest</p> <p class='SURVIVED'>removed call to lightsout/domain/Bulb::toggle : SURVIVED</p> 
+<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> <p class='KILLED'>removed call to lightsout/domain/Bulb::toggle : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -432,7 +432,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_16'/> 
 
-<p class='SURVIVED'>negated conditional : SURVIVED</p> 
+<p class='KILLED'>negated conditional : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -443,7 +443,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_17'/> 
 
-<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.KleinTest.lightsout.domain.KleinTest</p> <p class='SURVIVED'>Replaced integer subtraction with addition : SURVIVED</p> <p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.KleinTest.lightsout.domain.KleinTest</p> <p class='SURVIVED'>removed call to lightsout/domain/Bulb::toggle : SURVIVED</p> 
+<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> <p class='KILLED'>removed call to lightsout/domain/Bulb::toggle : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -454,7 +454,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_19'/> 
 
-<p class='SURVIVED'>negated conditional : SURVIVED</p> <p class='SURVIVED'>Replaced integer subtraction with addition : SURVIVED</p> 
+<p class='KILLED'>negated conditional : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> <p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -465,7 +465,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_20'/> 
 
-<p class='NO_COVERAGE'>removed call to lightsout/domain/Bulb::toggle : NO_COVERAGE</p> 
+<p class='KILLED'>removed call to lightsout/domain/Bulb::toggle : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -476,7 +476,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_22'/> 
 
-<p class='SURVIVED'>negated conditional : SURVIVED</p> <p class='SURVIVED'>Replaced integer subtraction with addition : SURVIVED</p> 
+<p class='KILLED'>Replaced integer subtraction with addition : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> <p class='KILLED'>negated conditional : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -487,7 +487,7 @@ padding-left: 5px;
 
 <a name='grouporg.pitest.mutationtest.report.html.SourceFile@c85dc_23'/> 
 
-<p class='NO_COVERAGE'>Replaced integer subtraction with addition : NO_COVERAGE</p> <p class='NO_COVERAGE'>Replaced integer subtraction with addition : NO_COVERAGE</p> <p class='NO_COVERAGE'>removed call to lightsout/domain/Bulb::toggle : NO_COVERAGE</p> 
+<p class='KILLED'>removed call to lightsout/domain/Bulb::toggle : KILLED -> lightsout.domain.TorusTest.lightsout.domain.TorusTest</p> 
 </td>
 </tr>
 
@@ -515,7 +515,7 @@ padding-left: 5px;
 
 <h2>Tests examined</h2>
 <ul>
-<li>lightsout.domain.KleinTest.lightsout.domain.KleinTest (1 ms)</li>
+<li>lightsout.domain.TorusTest.lightsout.domain.TorusTest (1 ms)</li>
 </ul>
 
 <br/>
