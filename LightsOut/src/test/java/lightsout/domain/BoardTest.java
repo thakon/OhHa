@@ -59,9 +59,4 @@ public class BoardTest {
         assertFalse(board.board[2][1].isLit());
         assertFalse(board.board[1][2].isLit());
     }
-
-    @Test
-    public void wrongIndicesDontMessThingsUp() {
-        board.toggle(5, 7);
-    }
 }

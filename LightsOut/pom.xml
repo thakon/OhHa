@@ -39,7 +39,7 @@
                 <configuration>
                     <instrumentation>
                         <includes>
-                            <include>lightsout.domain*</include>
+                            <include>lightsout/domain/*.class</include>
                         </includes>
                     </instrumentation>
                 </configuration>
