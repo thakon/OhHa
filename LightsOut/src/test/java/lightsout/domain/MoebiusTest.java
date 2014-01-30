@@ -16,36 +16,36 @@ import static org.junit.Assert.*;
  * @author Tuomas
  */
 public class MoebiusTest {
-
+    
     Moebius moebius;
-
+    
     public MoebiusTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
         moebius = new Moebius();
     }
-
+    
     @After
     public void tearDown() {
     }
-
+    
     @Test
-    public void moveTest() {
-        moebius.move(1, 0);
-        assertFalse(moebius.isLit(1, 0));
-        assertFalse(moebius.isLit(0, 0));
-        assertFalse(moebius.isLit(2, 0));
-        assertFalse(moebius.isLit(1, 1));
-        assertFalse(moebius.isLit(3, 4));
+    public void toggleTest() {
+        moebius.toggle(1, 0);
+        assertFalse(moebius.board[1][0].isLit());
+        assertFalse(moebius.board[0][0].isLit());
+        assertFalse(moebius.board[2][0].isLit());
+        assertFalse(moebius.board[1][1].isLit());
+        assertFalse(moebius.board[3][4].isLit());
     }
 }

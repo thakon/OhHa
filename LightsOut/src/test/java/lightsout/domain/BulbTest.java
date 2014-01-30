@@ -1,3 +1,4 @@
+
 package lightsout.domain;
 
 import org.junit.After;
@@ -7,11 +8,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class KleinTest {
+public class BulbTest {
     
-    Klein klein;
+    Bulb bulb;
 
-    public KleinTest() {
+    public BulbTest() {
     }
 
     @BeforeClass
@@ -24,7 +25,7 @@ public class KleinTest {
 
     @Before
     public void setUp() {
-        klein = new Klein();
+        bulb = new Bulb();
     }
 
     @After
@@ -32,12 +33,13 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTest() {
-        klein.toggle(0, 0);
-        assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[0][1].isLit());
-        assertFalse(klein.board[1][0].isLit());
-        assertFalse(klein.board[4][0].isLit());
-        assertFalse(klein.board[4][4].isLit());
+    public void constructorWorksProperly() {
+        assertTrue(bulb.isLit());
+    }
+    
+    @Test
+    public void lightGoesOut() {
+        bulb.toggle();
+        assertFalse(bulb.isLit());
     }
 }
