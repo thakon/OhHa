@@ -32,12 +32,12 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTest() {
-        klein.toggle(0, 0);
-        assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[0][1].isLit());
-        assertFalse(klein.board[1][0].isLit());
-        assertFalse(klein.board[4][0].isLit());
-        assertFalse(klein.board[4][4].isLit());
+    public void moveTest() {
+        klein.move(0, 0);
+        assertFalse(klein.isLit(0, 0));
+        assertFalse(klein.isLit(0, 1));
+        assertFalse(klein.isLit(1, 0));
+        assertFalse(klein.isLit(4, 0));
+        assertFalse(klein.isLit(4, 4));
     }
 }

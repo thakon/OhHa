@@ -4,23 +4,27 @@ import java.util.Random;
 
 public class Board {
 
-    protected Bulb[][] board;
+    protected boolean[][] board;
     private Random random;
 
     public Board() {
-        this.board = new Bulb[5][5];
+        this.board = new boolean[5][5];
         for (int i = 0; i < this.board.length; i++) {
             for (int j = 0; j < this.board[i].length; j++) {
-                this.board[i][j] = new Bulb();
+                this.board[i][j] = true;
             }
         }
         this.random = new Random();
     }
 
+    public boolean isLit(int x, int y) {
+        return this.board[x][y];
+    }
+
     public boolean isSolved() {
-        for (Bulb[] row : this.board) {
-            for (Bulb bulb : row) {
-                if (bulb.isLit()) {
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                if (isLit(i, j)) {
                     return false;
                 }
             }
@@ -39,28 +43,32 @@ public class Board {
         for (int i = 0; i < this.board.length; i++) {
             for (int j = 0; j < this.board[i].length; j++) {
                 if (random.nextDouble() < 0.5) {
-                    this.board[i][j].setIsLit(true);
+                    this.board[i][j] = true;
                 } else {
-                    this.board[i][j].setIsLit(false);
+                    this.board[i][j] = false;
                 }
             }
         }
     }
 
     public void toggle(int x, int y) {
+        this.board[x][y] = !this.board[x][y];
+    }
+
+    public void move(int x, int y) {
         if (this.properIndices(x, y)) {
-            this.board[x][y].toggle();
+            toggle(x, y);
             if (x > 0) {
-                this.board[x - 1][y].toggle();
+                toggle(x - 1, y);
             }
             if (y > 0) {
-                this.board[x][y - 1].toggle();
+                toggle(x, y - 1);
             }
             if (x < this.board.length - 1) {
-                this.board[x + 1][y].toggle();
+                toggle(x + 1, y);
             }
             if (y < this.board[x].length - 1) {
-                this.board[x][y + 1].toggle();
+                toggle(x, y + 1);
             }
         }
     }

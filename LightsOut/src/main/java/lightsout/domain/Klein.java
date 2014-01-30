@@ -7,20 +7,20 @@ public class Klein extends Board {
     }
 
     @Override
-    public void toggle(int x, int y) {
+    public void move(int x, int y) {
         if (super.properIndices(x, y)) {
-            super.toggle(x, y);
+            super.move(x, y);
             if (x == 0) {
-                this.board[this.board.length - 1][y].toggle();
+                super.toggle(this.board.length - 1, y);
             }
             if (y == 0) {
-                this.board[this.board.length - x - 1][this.board[x].length - 1].toggle();
+                super.toggle(this.board.length - x - 1, this.board[x].length - 1);
             }
             if (x == this.board.length - 1) {
-                this.board[0][y].toggle();
+                super.toggle(0, y);
             }
             if (y == this.board[x].length - 1) {
-                this.board[this.board.length - x - 1][0].toggle();
+                super.toggle(this.board.length - x - 1, 0);
             }
         }
     }

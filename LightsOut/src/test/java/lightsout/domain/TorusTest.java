@@ -1,4 +1,3 @@
-
 package lightsout.domain;
 
 import org.junit.After;
@@ -9,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TorusTest {
-    
+
     Torus torus;
 
     public TorusTest() {
@@ -33,12 +32,12 @@ public class TorusTest {
     }
 
     @Test
-    public void toggleTest() {
-        torus.toggle(0, 0);
-        assertFalse(torus.board[0][0].isLit());
-        assertFalse(torus.board[1][0].isLit());
-        assertFalse(torus.board[0][1].isLit());
-        assertFalse(torus.board[0][4].isLit());
-        assertFalse(torus.board[4][0].isLit());
+    public void moveTest() {
+        torus.move(0, 0);
+        assertFalse(torus.isLit(0, 0));
+        assertFalse(torus.isLit(1, 0));
+        assertFalse(torus.isLit(0, 1));
+        assertFalse(torus.isLit(0, 4));
+        assertFalse(torus.isLit(4, 0));
     }
 }
