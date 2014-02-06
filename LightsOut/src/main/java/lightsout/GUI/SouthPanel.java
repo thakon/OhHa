@@ -1,5 +1,5 @@
 
-package GUI;
+package lightsout.GUI;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;

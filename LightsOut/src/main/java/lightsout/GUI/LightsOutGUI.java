@@ -1,5 +1,5 @@
 
-package GUI;
+package lightsout.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Container;

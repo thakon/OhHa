@@ -1,6 +1,6 @@
 package lightsout.lightsout;
 
-import GUI.LightsOutGUI;
+import lightsout.GUI.LightsOutGUI;
 import javax.swing.SwingUtilities;
 
 public class LightsOut {

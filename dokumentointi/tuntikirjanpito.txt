@@ -8,3 +8,4 @@ Tuntikirjanpito
                  Luokalla Bulb ei tuntunut olevan mitään perustettu, sisältönä ainoastaan totuusarvo.
 30.01. ~1 tunti, palautettu luokka Bulb :)
 30.01. ~3 tuntia, mutanttien kimpussa sekä uusi luokkakaavio
+06.02. ~8 tuntia, GUI:n aloittelua, Javadocin tekemistä ja pari sekvenssikaaviota.
