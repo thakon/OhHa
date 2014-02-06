@@ -1,11 +1,28 @@
 package lightsout.domain;
-
+/**
+ * Board consisting of bulbs shaped like
+ * Torus or doughnut given as a quotient space
+ * of square
+ * @see Bulb
+ * @see Board
+ * @author Tuomas
+ */
 public class Torus extends Board {
-
+/**
+ * Constructor
+ * @see Board
+ */
     public Torus() {
         super();
     }
-
+/**
+ * Toggles bulb on row x, column y and its
+ * neighbours.
+ * @param x row
+ * @param y column
+ * @see Board
+ * @see Bulb
+ */
     @Override
     public void toggle(int x, int y) {
         if (super.properIndices(x, y)) {

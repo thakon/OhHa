@@ -52,6 +52,17 @@ public class BoardTest {
     }
 
     @Test
+    public void resetTest() {
+        board.randomize();
+        board.reset();
+        for (Bulb[] row : board.board) {
+            for (Bulb b : row) {
+                assertTrue(b.isLit());
+            }
+        }
+    }
+
+    @Test
     public void toggleTest() {
         board.toggle(1, 1);
         assertFalse(board.board[1][1].isLit());
@@ -60,7 +71,7 @@ public class BoardTest {
         assertFalse(board.board[2][1].isLit());
         assertFalse(board.board[1][2].isLit());
     }
-    
+
     @Test
     public void toggleTestCorner() {
         board.toggle(4, 4);
@@ -68,9 +79,9 @@ public class BoardTest {
         assertFalse(board.board[3][4].isLit());
         assertFalse(board.board[4][3].isLit());
     }
-    
+
     @Test
-    public void toggleTestWrongInput(){
+    public void toggleTestWrongInput() {
         board.toggle(5, 4);
         board.toggle(4, 5);
         assertTrue(board.board[4][4].isLit());
