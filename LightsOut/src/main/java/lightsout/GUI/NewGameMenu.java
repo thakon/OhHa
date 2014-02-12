@@ -1,44 +1,75 @@
 
 package lightsout.GUI;
 
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
+import lightsout.domain.*;
 
-public class NewGameMenu extends JPopupMenu {
+public class NewGameMenu extends JDialog {
     private JRadioButtonMenuItem boardButton;
     private JRadioButtonMenuItem moebiusButton;
     private JRadioButtonMenuItem kleinButton;
     private JRadioButtonMenuItem torusButton;
+    
+    private JRadioButtonMenuItem fiveFiveBoard;
+    private JRadioButtonMenuItem sevenSevenBoard;
+    private JRadioButtonMenuItem nineNineBoard;
+    
+    private Container container;
 
-    public NewGameMenu() {
-        super();
+    public NewGameMenu(Container container) {
+        this.container = container;
         
-        this.boardButton = new JRadioButtonMenuItem("Standard");
-        this.kleinButton = new JRadioButtonMenuItem("Klein");
-        this.moebiusButton = new JRadioButtonMenuItem("Möbius");
+        setTitle("New Game");
+        setPreferredSize(new Dimension(300, 300));
+        
+        this.setLayout(new GridLayout(5, 2));
+        
+        this.boardButton = new JRadioButtonMenuItem("Standard Board");
+        this.kleinButton = new JRadioButtonMenuItem("Klein's Bottle");
+        this.moebiusButton = new JRadioButtonMenuItem("Möbius Strip");
         this.torusButton = new JRadioButtonMenuItem("Torus");
+        
+        this.fiveFiveBoard = new JRadioButtonMenuItem("5x5");
+        this.sevenSevenBoard = new JRadioButtonMenuItem("7x7");
+        this.nineNineBoard = new JRadioButtonMenuItem("9x9");
         
         setComponents();
         setLocation(150, 150);
+        pack();
     }
     
     private void setComponents() {
-        add(new JLabel("Choose boardtype:"));
+        add(new JLabel("Boardtype: "));
+        add(new JLabel("Boardsize: "));
         
-        ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(boardButton);
-        buttonGroup.add(moebiusButton);
-        buttonGroup.add(kleinButton);
-        buttonGroup.add(torusButton);
+        ButtonGroup buttonGroup1 = new ButtonGroup();
+        buttonGroup1.add(boardButton);
+        buttonGroup1.add(moebiusButton);
+        buttonGroup1.add(kleinButton);
+        buttonGroup1.add(torusButton);
         boardButton.setSelected(true);
+        
+        ButtonGroup buttonGroup2 = new ButtonGroup();
+        buttonGroup2.add(fiveFiveBoard);
+        buttonGroup2.add(sevenSevenBoard);
+        buttonGroup2.add(nineNineBoard);
+        fiveFiveBoard.setSelected(true);
+        
         add(this.boardButton);
+        add(this.fiveFiveBoard);
         add(this.moebiusButton);
+        add(this.sevenSevenBoard);
         add(this.kleinButton);
+        add(this.nineNineBoard);
         add(this.torusButton);
         
         JButton playButton = new JButton("Play!");
@@ -50,16 +81,31 @@ public class NewGameMenu extends JPopupMenu {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(boardButton.isSelected()) {
-                System.out.println("Jee, standardilauta!");
-            } else if(moebiusButton.isSelected()) {
-                System.out.println("Jee, Möbiuksen nauha!");
-            } else if(kleinButton.isSelected()) {
-                System.out.println("Jee, Kleinin pullo!");
+            dispose();
+            container.removeAll();
+            
+            GamePanel gamePanel;
+            int boardSize;
+            if(fiveFiveBoard.isSelected()) {
+                boardSize = 5;
+            } else if (sevenSevenBoard.isSelected()) {
+                boardSize = 7;
             } else {
-                System.out.println("Jee, Torus!");
+                boardSize = 9;
             }
-            setVisible(false);
+            
+            if(boardButton.isSelected()) {
+                gamePanel = new GamePanel(new StandardBoard(boardSize));
+            } else if(moebiusButton.isSelected()) {
+                gamePanel = new GamePanel(new Moebius(boardSize));
+            } else if(kleinButton.isSelected()) {
+                gamePanel = new GamePanel(new Klein(boardSize));
+            } else {
+                gamePanel = new GamePanel(new Torus(boardSize));
+            }
+            container.add(gamePanel);
+            container.repaint();
+            container.revalidate();
         }
         
     }

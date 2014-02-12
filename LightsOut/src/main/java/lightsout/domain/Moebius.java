@@ -3,35 +3,33 @@ package lightsout.domain;
  * Board consisting of bulbs shaped like
  * Möbius band bottle given as a quotient space
  * of square.
- * @see Bulb
- * @see Board
+ * @see StandardBoard
  * @author Tuomas
  */
-public class Moebius extends Board {
+public class Moebius extends StandardBoard {
 /**
  * Constructor
- * @see Board
+ * @see StandardBoard
  */
-    public Moebius() {
-        super();
+    public Moebius(int size) {
+        super(size);
     }
 /**
  * Toggles bulb on row x, column y and its
  * neighbours.
  * @param x row
  * @param y column
- * @see Board
- * @see Bulb
+ * @see StandardBoard
  */
     @Override
-    public void toggle(int x, int y) {
+    public void makeMove(int x, int y) {
         if (super.properIndices(x, y)) {
-            super.toggle(x, y);
+            super.makeMove(x, y);
             if (y == 0) {
-                this.board[this.board.length - x - 1][this.board[x].length - 1].toggle();
+                toggle(this.board.length - x - 1, this.board[x].length - 1);
             }
             if (y == this.board[x].length - 1) {
-                this.board[this.board.length - x - 1][0].toggle();
+                toggle(this.board.length - x - 1, 0);
             }
         }
     }

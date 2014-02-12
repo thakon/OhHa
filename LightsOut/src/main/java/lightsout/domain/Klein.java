@@ -3,41 +3,39 @@ package lightsout.domain;
  * Board consisting of bulbs shaped like
  * Klein's bottle given as a quotient space
  * of square
- * @see Board
- * @see Bulb
+ * @see StandardBoard
  * @author Tuomas
  */
-public class Klein extends Board {
+public class Klein extends StandardBoard {
 /**
  * Constructor
- * @see Board
+ * @see StandardBoard
  */
-    public Klein() {
-        super();
+    public Klein(int size) {
+        super(size);
     }
 /**
  * Toggles bulb on row x, column y and its
  * neighbours.
  * @param x row
  * @param y column
- * @see Board
- * @see Bulb
+ * @see StandardBoard
  */
     @Override
-    public void toggle(int x, int y) {
+    public void makeMove(int x, int y) {
         if (super.properIndices(x, y)) {
-            super.toggle(x, y);
+            super.makeMove(x, y);
             if (x == 0) {
-                this.board[this.board.length - 1][y].toggle();
+                toggle(this.board.length - 1, y);
             }
             if (y == 0) {
-                this.board[this.board.length - x - 1][this.board[x].length - 1].toggle();
+                toggle(this.board.length - x - 1, this.board[x].length - 1);
             }
             if (x == this.board.length - 1) {
-                this.board[0][y].toggle();
+                toggle(0, y);
             }
             if (y == this.board[x].length - 1) {
-                this.board[this.board.length - x - 1][0].toggle();
+                toggle(this.board.length - x - 1, 0);
             }
         }
     }

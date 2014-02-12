@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class KleinTest {
-    
+
     Klein klein;
 
     public KleinTest() {
@@ -24,7 +24,7 @@ public class KleinTest {
 
     @Before
     public void setUp() {
-        klein = new Klein();
+        klein = new Klein(5);
     }
 
     @After
@@ -33,33 +33,31 @@ public class KleinTest {
 
     @Test
     public void toggleTestLowerLeftCorner() {
-        klein.toggle(0, 0);
-        assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[1][0].isLit());
-        assertFalse(klein.board[0][1].isLit());
-        assertFalse(klein.board[4][0].isLit());
-        assertFalse(klein.board[4][4].isLit());
+        klein.makeMove(0, 0);
+        assertFalse(klein.isLit(0, 0));
+        assertFalse(klein.isLit(1, 0));
+        assertFalse(klein.isLit(0, 1));
+        assertFalse(klein.isLit(4, 0));
+        assertFalse(klein.isLit(4, 4));
     }
-    
+
     @Test
     public void toggleTestUpperRightCorner() {
-        klein.toggle(4, 4);
-        assertFalse(klein.board[4][4].isLit());
-        assertFalse(klein.board[4][3].isLit());
-        assertFalse(klein.board[3][4].isLit());
-        assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[0][4].isLit());
+        klein.makeMove(4, 4);
+        assertFalse(klein.isLit(4, 4));
+        assertFalse(klein.isLit(4, 3));
+        assertFalse(klein.isLit(3, 4));
+        assertFalse(klein.isLit(0, 0));
+        assertFalse(klein.isLit(0, 4));
     }
-    
+
     @Test
     public void toggleTestSide() {
-        klein.toggle(1, 0);
-        assertFalse(klein.board[1][0].isLit());
-        assertFalse(klein.board[2][0].isLit());
-        assertFalse(klein.board[1][1].isLit());
-        assertFalse(klein.board[0][0].isLit());
-        assertFalse(klein.board[3][4].isLit());
+        klein.makeMove(1, 0);
+        assertFalse(klein.isLit(1, 0));
+        assertFalse(klein.isLit(2, 0));
+        assertFalse(klein.isLit(1, 1));
+        assertFalse(klein.isLit(0, 0));
+        assertFalse(klein.isLit(3, 4));
     }
-    
-    
 }

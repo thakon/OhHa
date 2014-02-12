@@ -9,3 +9,6 @@ Tuntikirjanpito
 30.01. ~1 tunti, palautettu luokka Bulb :)
 30.01. ~3 tuntia, mutanttien kimpussa sek‰ uusi luokkakaavio
 06.02. ~8 tuntia, GUI:n aloittelua, Javadocin tekemist‰ ja pari sekvenssikaaviota.
+07.02. ~2 tuntia, p‰‰n hakkaamista sein‰‰n
+11.02. ~2 tuntia, GUI:n muokkausta, refaktoroinnin suunnittelua
+12.02. ~6 tuntia, GUI hyv‰ll‰ tolalla, koodia aikalailla uusiksi, Bulb-luokka poistettu B)

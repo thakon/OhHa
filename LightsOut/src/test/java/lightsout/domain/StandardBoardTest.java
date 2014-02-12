@@ -7,11 +7,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class BoardTest {
+public class StandardBoardTest {
 
-    Board board;
+    StandardBoard board;
 
-    public BoardTest() {
+    public StandardBoardTest() {
     }
 
     @BeforeClass
@@ -24,7 +24,7 @@ public class BoardTest {
 
     @Before
     public void setUp() {
-        board = new Board();
+        board = new StandardBoard(5);
     }
 
     @After
@@ -33,9 +33,9 @@ public class BoardTest {
 
     @Test
     public void constructorWorksProperly() {
-        for (Bulb[] row : board.board) {
-            for (Bulb b : row) {
-                assertTrue(b.isLit());
+        for (int i = 0; i < board.size(); i++) {
+            for (int j = 0; j < board.size(); j++) {
+                assertTrue(board.isLit(i, j));
             }
         }
     }
@@ -43,9 +43,9 @@ public class BoardTest {
     @Test
     public void solveCheckerWorksProperly() {
         assertFalse(board.isSolved());
-        for (Bulb[] row : board.board) {
-            for (Bulb b : row) {
-                b.setIsLit(false);
+        for (int i = 0; i < board.size(); i++) {
+            for (int j = 0; j < board.size(); j++) {
+                board.toggle(i, j);
             }
         }
         assertTrue(board.isSolved());
@@ -55,36 +55,36 @@ public class BoardTest {
     public void resetTest() {
         board.randomize();
         board.reset();
-        for (Bulb[] row : board.board) {
-            for (Bulb b : row) {
-                assertTrue(b.isLit());
+        for (int i = 0; i < board.size(); i++) {
+            for (int j = 0; j < board.size(); j++) {
+                assertTrue(board.isLit(i, j));
             }
         }
     }
 
     @Test
     public void toggleTest() {
-        board.toggle(1, 1);
-        assertFalse(board.board[1][1].isLit());
-        assertFalse(board.board[0][1].isLit());
-        assertFalse(board.board[1][0].isLit());
-        assertFalse(board.board[2][1].isLit());
-        assertFalse(board.board[1][2].isLit());
+        board.makeMove(1, 1);
+        assertFalse(board.isLit(1, 1));
+        assertFalse(board.isLit(0, 1));
+        assertFalse(board.isLit(1, 0));
+        assertFalse(board.isLit(2, 1));
+        assertFalse(board.isLit(1, 2));
     }
 
     @Test
     public void toggleTestCorner() {
-        board.toggle(4, 4);
-        assertFalse(board.board[4][4].isLit());
-        assertFalse(board.board[3][4].isLit());
-        assertFalse(board.board[4][3].isLit());
+        board.makeMove(4, 4);
+        assertFalse(board.isLit(4, 4));
+        assertFalse(board.isLit(3, 4));
+        assertFalse(board.isLit(4, 3));
     }
 
     @Test
     public void toggleTestWrongInput() {
-        board.toggle(5, 4);
-        board.toggle(4, 5);
-        assertTrue(board.board[4][4].isLit());
+        board.makeMove(5, 4);
+        board.makeMove(4, 5);
+        assertTrue(board.isLit(4, 4));
     }
 
     @Test

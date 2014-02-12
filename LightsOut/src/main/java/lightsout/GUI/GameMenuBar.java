@@ -1,6 +1,7 @@
 
 package lightsout.GUI;
 
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenu;
@@ -9,8 +10,10 @@ import javax.swing.JMenuItem;
 
 public class GameMenuBar extends JMenuBar {
     
-    public GameMenuBar() {
-        super();
+    private Container container;
+    
+    public GameMenuBar(Container container) {
+        this.container = container;
         setComponents();
     }
     
@@ -18,7 +21,7 @@ public class GameMenuBar extends JMenuBar {
         JMenu menu1 = new JMenu("Game");
         
         JMenuItem newGame = new JMenuItem("New Game");
-        newGame.addActionListener(new newGameListener());
+        newGame.addActionListener(new newGameListener(container));
         menu1.add(newGame);
         
         JMenuItem exit = new JMenuItem("Exit");
@@ -30,10 +33,16 @@ public class GameMenuBar extends JMenuBar {
     
     private static class newGameListener implements ActionListener {
         
+        private Container container;
+
+        public newGameListener(Container container) {
+            this.container = container;
+        }
+        
         @Override
         public void actionPerformed(ActionEvent e) {
-            NewGameMenu popUp = new NewGameMenu();
-            popUp.setVisible(true);
+            NewGameMenu newGame = new NewGameMenu(container);
+            newGame.setVisible(true);
         }
     }
     

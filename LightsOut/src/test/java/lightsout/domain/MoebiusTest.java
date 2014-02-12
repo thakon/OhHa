@@ -24,7 +24,7 @@ public class MoebiusTest {
 
     @Before
     public void setUp() {
-        moebius = new Moebius();
+        moebius = new Moebius(5);
     }
 
     @After
@@ -33,21 +33,21 @@ public class MoebiusTest {
 
     @Test
     public void toggleTestLeftSide() {
-        moebius.toggle(1, 0);
-        assertFalse(moebius.board[1][0].isLit());
-        assertFalse(moebius.board[0][0].isLit());
-        assertFalse(moebius.board[2][0].isLit());
-        assertFalse(moebius.board[1][1].isLit());
-        assertFalse(moebius.board[3][4].isLit());
+        moebius.makeMove(1, 0);
+        assertFalse(moebius.isLit(1,0));
+        assertFalse(moebius.isLit(0,0));
+        assertFalse(moebius.isLit(2,0));
+        assertFalse(moebius.isLit(1,1));
+        assertFalse(moebius.isLit(3,4));
     }
 
     @Test
     public void toggleTestRightSide() {
-        moebius.toggle(3, 4);
-        assertFalse(moebius.board[3][4].isLit());
-        assertFalse(moebius.board[4][4].isLit());
-        assertFalse(moebius.board[3][3].isLit());
-        assertFalse(moebius.board[2][4].isLit());
-        assertFalse(moebius.board[1][0].isLit());
+        moebius.makeMove(3, 4);
+        assertFalse(moebius.isLit(3,4));
+        assertFalse(moebius.isLit(4,4));
+        assertFalse(moebius.isLit(3,3));
+        assertFalse(moebius.isLit(2,4));
+        assertFalse(moebius.isLit(1,0));
     }
 }
