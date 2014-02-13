@@ -1,7 +1,6 @@
 package lightsout.GUI;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
 import lightsout.domain.*;
 
 public class GamePanel extends JPanel {
@@ -17,7 +15,7 @@ public class GamePanel extends JPanel {
     private Board board;
     private int moveCount;
     private JLabel counter;
-    private JToggleButton[][] buttonGrid;
+    private LightsOutButton[][] buttonGrid;
 
     public GamePanel(StandardBoard board) {
         super(new BorderLayout());
@@ -30,14 +28,12 @@ public class GamePanel extends JPanel {
     private JPanel gameBoard() {
         GridLayout grid = new GridLayout(board.size(), board.size());
         JPanel gameBoard = new JPanel(grid);
-        buttonGrid = new JToggleButton[board.size()][board.size()];
+        buttonGrid = new LightsOutButton[board.size()][board.size()];
         for (int i = 0; i < board.size(); i++) {
             for (int j = 0; j < board.size(); j++) {
-                JToggleButton b = new JToggleButton();
-                b.setBackground(Color.YELLOW);
-                b.setSelected(!board.isLit(i, j));
+                LightsOutButton b = new LightsOutButton();
                 buttonGrid[i][j] = b;
-                b.addActionListener(new lightButtonListener(buttonGrid, i, j));
+                b.addActionListener(new lightButtonListener(i, j));
                 gameBoard.add(b);
             }
         }
@@ -64,7 +60,7 @@ public class GamePanel extends JPanel {
     private void updateGamePanel() {
         for (int i = 0; i < buttonGrid.length; i++) {
             for (int j = 0; j < buttonGrid[i].length; j++) {
-                buttonGrid[i][j].setSelected(!board.isLit(i, j));
+                buttonGrid[i][j].setIsLit(board.isLit(i, j));
             }
         }
         counter.setText(" ----- Moves: " + Integer.toString(moveCount) + " ----- ");
@@ -92,12 +88,10 @@ public class GamePanel extends JPanel {
 
     private class lightButtonListener implements ActionListener {
 
-        private JToggleButton[][] buttonGrid;
         private int x;
         private int y;
 
-        public lightButtonListener(JToggleButton[][] buttonGrid, int x, int y) {
-            this.buttonGrid = buttonGrid;
+        public lightButtonListener(int x, int y) {
             this.x = x;
             this.y = y;
         }

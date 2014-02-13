@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class GameMenuBar extends JMenuBar {
     
@@ -29,6 +30,14 @@ public class GameMenuBar extends JMenuBar {
         menu1.add(exit);
         
         add(menu1);
+        
+        JMenu menu2 = new JMenu("Info");
+        
+        JMenuItem about = new JMenuItem("About");
+        about.addActionListener(new aboutListener());
+        menu2.add(about);
+        
+        add(menu2);
     }
     
     private static class newGameListener implements ActionListener {
@@ -52,6 +61,16 @@ public class GameMenuBar extends JMenuBar {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
+        
+    }
+    
+    private static class aboutListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Soita banjoa ja ole onnellinen!", "About", JOptionPane.PLAIN_MESSAGE);
+        }
+        
         
     }
 }

@@ -10,7 +10,7 @@ import java.util.Random;
 public class StandardBoard implements Board {
 
     /**
-     * Matrix of bulb representing the board.
+     * Boolean matrix representing the board.
      */
     protected boolean[][] board;
     private Random random;
@@ -30,6 +30,13 @@ public class StandardBoard implements Board {
         }
     }
 
+    /**
+     * Simple getter. Given row and column, tells whether the bulb on their 
+     * intersection is lit or not.
+     * @param x row
+     * @param y colum
+     * @return true iff bulb is lit
+     */
     @Override
     public boolean isLit(int x, int y) {
         return board[x][y];
@@ -57,7 +64,7 @@ public class StandardBoard implements Board {
      *
      * @param x row
      * @param y column
-     * @return true iff row and column are between 0 and 4.
+     * @return true iff row and column are between 0 and board.length.
      */
     public boolean properIndices(int x, int y) {
         if (x >= 0 && y >= 0
@@ -90,7 +97,11 @@ public class StandardBoard implements Board {
             }
         }
     }
-    
+    /**
+     * Given row and column, toggles the bulb on their intersection.
+     * @param x row
+     * @param y colum
+     */
     public void toggle(int x, int y) {
         board[x][y] = !board[x][y];
     }
@@ -99,8 +110,8 @@ public class StandardBoard implements Board {
      * Given row and column, toggles the bulb on their intersection and also the
      * bulb's neighbours.
      *
-     * @param x Represents row.
-     * @param y Represents
+     * @param x row
+     * @param y column
      */
     @Override
     public void makeMove(int x, int y) {
