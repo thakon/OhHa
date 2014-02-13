@@ -3,14 +3,15 @@ package lightsout.domain;
 import java.util.Random;
 
 /**
- * Board consisting of bulbs shaped like a square.
+ * Board consisting of bulbs shaped like a square. 
  *
  * @author Tuomas
  */
 public class StandardBoard implements Board {
 
     /**
-     * Boolean matrix representing the board.
+     * Boolean matrix representing the board. Boolean value
+     * true corresponds to a bulb being lit.
      */
     protected boolean[][] board;
     private Random random;

@@ -32,7 +32,7 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTestLowerLeftCorner() {
+    public void moveTestLowerLeftCorner() {
         klein.makeMove(0, 0);
         assertFalse(klein.isLit(0, 0));
         assertFalse(klein.isLit(1, 0));
@@ -42,7 +42,7 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTestUpperRightCorner() {
+    public void moveTestUpperRightCorner() {
         klein.makeMove(4, 4);
         assertFalse(klein.isLit(4, 4));
         assertFalse(klein.isLit(4, 3));
@@ -52,7 +52,7 @@ public class KleinTest {
     }
 
     @Test
-    public void toggleTestSide() {
+    public void moveTestSide() {
         klein.makeMove(1, 0);
         assertFalse(klein.isLit(1, 0));
         assertFalse(klein.isLit(2, 0));

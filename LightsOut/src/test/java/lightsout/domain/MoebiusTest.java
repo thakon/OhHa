@@ -32,7 +32,7 @@ public class MoebiusTest {
     }
 
     @Test
-    public void toggleTestLeftSide() {
+    public void moveTestLeftSide() {
         moebius.makeMove(1, 0);
         assertFalse(moebius.isLit(1,0));
         assertFalse(moebius.isLit(0,0));
@@ -42,7 +42,7 @@ public class MoebiusTest {
     }
 
     @Test
-    public void toggleTestRightSide() {
+    public void moveTestRightSide() {
         moebius.makeMove(3, 4);
         assertFalse(moebius.isLit(3,4));
         assertFalse(moebius.isLit(4,4));

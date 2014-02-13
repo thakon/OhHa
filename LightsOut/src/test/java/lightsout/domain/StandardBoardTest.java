@@ -38,6 +38,11 @@ public class StandardBoardTest {
                 assertTrue(board.isLit(i, j));
             }
         }
+        assertNotNull(new StandardBoard(5).board);
+        assertNull(new StandardBoard(6).board);
+        assertNotNull(new StandardBoard(7).board);
+        assertNull(new StandardBoard(8).board);
+        assertNotNull(new StandardBoard(9).board);
     }
 
     @Test
@@ -61,9 +66,16 @@ public class StandardBoardTest {
             }
         }
     }
-
+    
     @Test
     public void toggleTest() {
+        assertTrue(board.isLit(0, 0));
+        board.toggle(0, 0);
+        assertFalse(board.isLit(0, 0));
+    }
+
+    @Test
+    public void moveTest() {
         board.makeMove(1, 1);
         assertFalse(board.isLit(1, 1));
         assertFalse(board.isLit(0, 1));
@@ -73,7 +85,7 @@ public class StandardBoardTest {
     }
 
     @Test
-    public void toggleTestCorner() {
+    public void moveTestCorner() {
         board.makeMove(4, 4);
         assertFalse(board.isLit(4, 4));
         assertFalse(board.isLit(3, 4));
@@ -81,7 +93,7 @@ public class StandardBoardTest {
     }
 
     @Test
-    public void toggleTestWrongInput() {
+    public void moveTestWrongInput() {
         board.makeMove(5, 4);
         board.makeMove(4, 5);
         assertTrue(board.isLit(4, 4));
@@ -94,5 +106,10 @@ public class StandardBoardTest {
         assertTrue(board.properIndices(0, 0));
         assertTrue(board.properIndices(4, 4));
         assertTrue(board.properIndices(1, 1));
+    }
+    
+    @Test
+    public void boardSizeTest() {
+        assertEquals(5, board.size());
     }
 }

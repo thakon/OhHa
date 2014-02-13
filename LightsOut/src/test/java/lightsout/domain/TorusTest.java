@@ -33,7 +33,7 @@ public class TorusTest {
     }
 
     @Test
-    public void toggleTestLowerLeftCorner() {
+    public void moveTestLowerLeftCorner() {
         torus.makeMove(0, 0);
         assertFalse(torus.isLit(0,0));
         assertFalse(torus.isLit(1,0));
@@ -43,7 +43,7 @@ public class TorusTest {
     }
     
     @Test
-    public void toggleTestUpperRightCorner() {
+    public void moveTestUpperRightCorner() {
         torus.makeMove(4, 4);
         assertFalse(torus.isLit(4,4));
         assertFalse(torus.isLit(3,4));

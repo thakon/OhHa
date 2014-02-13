@@ -12,3 +12,4 @@ Tuntikirjanpito
 07.02. ~2 tuntia, p‰‰n hakkaamista sein‰‰n
 11.02. ~2 tuntia, GUI:n muokkausta, refaktoroinnin suunnittelua
 12.02. ~6 tuntia, GUI hyv‰ll‰ tolalla, koodia aikalailla uusiksi, Bulb-luokka poistettu B)
+13.02. ~3 tuntia, uusia testej‰, UML-kaaviot uusiksi, pient‰ GUI:n muokkausta
