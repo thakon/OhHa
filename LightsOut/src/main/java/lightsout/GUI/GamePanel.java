@@ -17,7 +17,7 @@ public class GamePanel extends JPanel {
     private JLabel counter;
     private LightsOutButton[][] buttonGrid;
 
-    public GamePanel(StandardBoard board) {
+    public GamePanel(Board board) {
         super(new BorderLayout());
         this.board = board;
         this.moveCount = 0;

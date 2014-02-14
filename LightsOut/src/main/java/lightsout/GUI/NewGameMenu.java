@@ -94,15 +94,18 @@ public class NewGameMenu extends JDialog {
                 boardSize = 9;
             }
             
+            Board board;
             if(boardButton.isSelected()) {
-                gamePanel = new GamePanel(new StandardBoard(boardSize));
+                board = new StandardBoard(boardSize);
             } else if(moebiusButton.isSelected()) {
-                gamePanel = new GamePanel(new Moebius(boardSize));
+                board = new Moebius(boardSize);
             } else if(kleinButton.isSelected()) {
-                gamePanel = new GamePanel(new Klein(boardSize));
+                board = new Klein(boardSize);
             } else {
-                gamePanel = new GamePanel(new Torus(boardSize));
+                board = new Torus(boardSize);
             }
+            gamePanel = new GamePanel(board);
+            
             container.add(gamePanel);
             container.repaint();
             container.revalidate();

@@ -8,7 +8,7 @@ import lightsout.domain.*;
 public class LightsOutGUI implements Runnable {
 
     private JFrame frame;
-    private StandardBoard board;
+    private Board board;
     private GamePanel gamePanel;
 
     public LightsOutGUI() {
