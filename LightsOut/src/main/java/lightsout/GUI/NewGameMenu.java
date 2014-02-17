@@ -84,7 +84,6 @@ public class NewGameMenu extends JDialog {
             dispose();
             container.removeAll();
             
-            GamePanel gamePanel;
             int boardSize;
             if(fiveFiveBoard.isSelected()) {
                 boardSize = 5;
@@ -104,10 +103,9 @@ public class NewGameMenu extends JDialog {
             } else {
                 board = new Torus(boardSize);
             }
-            gamePanel = new GamePanel(board);
+            GamePanel gamePanel = new GamePanel(board);
             
             container.add(gamePanel);
-            container.repaint();
             container.revalidate();
         }
         

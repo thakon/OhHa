@@ -17,7 +17,10 @@ public class StandardBoard implements Board {
     private Random random;
 
     /**
-     * Constructor makes a 5x5, 7x7 or 9x9 matrix of bulbs with all lights on.
+     * Constructor creates a square board of lights,
+     * represented by boolean square matrix, with
+     * side of length size
+     * @param size length of a side of the board
      */
     public StandardBoard(int size) {
         if (size == 5 || size == 7 || size == 9) {
