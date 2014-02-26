@@ -1,4 +1,8 @@
+<><><><><><><><
+===============
 Tuntikirjanpito
+===============
+<><><><><><><><
 
 16.01. ~2 tuntia, projektin aloittaminen
 24.01. ~2 tuntia, perusohjelmalogiikan kirjoittamista
@@ -13,3 +17,5 @@ Tuntikirjanpito
 11.02. ~2 tuntia, GUI:n muokkausta, refaktoroinnin suunnittelua
 12.02. ~6 tuntia, GUI hyvällä tolalla, koodia aikalailla uusiksi, Bulb-luokka poistettu B)
 13.02. ~3 tuntia, uusia testejä, UML-kaaviot uusiksi, pientä GUI:n muokkausta
+26.02. ~1 tunti, rakennekuvaus, käyttöohjeet, pientä viilausta sekä ikävä huomio, että Kleinin
+                 pullolle ja Torukselle on olemassa aivan liiankin ilmeinen sama voittava strategia.

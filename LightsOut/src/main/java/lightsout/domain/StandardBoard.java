@@ -68,7 +68,7 @@ public class StandardBoard implements Board {
      *
      * @param x row
      * @param y column
-     * @return true iff row and column are between 0 and board.length.
+     * @return true iff row and column are between 0 and board.length - 1.
      */
     public boolean properIndices(int x, int y) {
         if (x >= 0 && y >= 0

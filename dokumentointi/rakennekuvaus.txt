@@ -1,0 +1,17 @@
+<><><><><><><><><><><><><>
+==========================
+Lights Out - rakennekuvaus
+==========================
+<><><><><><><><><><><><><>
+
+Rajapinta Board on toimii käyttöliittymän ja ohjelmalogiikan
+rajapintana. Käyttöliittymällä on käytössään yksi Board rajapinnan
+implementoiva olio. Rajapinta tarjoaa käyttöliittymän tarvitsemat
+metodit.
+
+Luokka StandardBoard toteuttaa rajapinnan Board. StandardBoard
+vastaa yksinkertaista neliölautaa.
+
+Luokat Moebius, Klein ja Torus ovat luokan StandardBoard erikoistuksia.
+Kussakin on muokattu StandardBoardin makeMove-metodia siten, että
+siirto ottaa huomioon mahdolliset laudan reunojen samaistukset.

@@ -1,5 +1,8 @@
+<><><><><><><><><
+=================
 Lights Out - peli
 =================
+<><><><><><><><><
 
 Toteutetaan versio Lights Out - pelistä. Pelin pelilaudassa on valoja 
 neliömatriisimuodossa ja valoja kytketään päälle ja pois päältä niitä

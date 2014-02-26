@@ -1,0 +1,36 @@
+<><><><><><><><><><><><><
+=========================
+Lights Out - käyttöohjeet
+=========================
+<><><><><><><><><><><><><
+
+--------------
+Pelin aloitus:
+--------------
+
+Kun käynnistät pelin, ilmestyy ruudulle valikko, josta voit valita
+pelissä käytettävän laudan tyypin ja koon. Valittavana olevat lauta-
+vaihtoehdot ovat seuraavat.
+
+Lautatyyppivaihtoehdot ovat Standardilauta, Möbiuksen nauha, Kleinin pullo ja Torus.
+Kaikki laudat on annettu neliönä, jossa neliön sivuja on mahdollisesti samaistettu
+keskenään.
+
+Lisäksi voit valita laudan koon. Laudan sivu on joko viiden, seitsemän
+tai yhdeksän ruudun levyinen.
+
+Laudan ruutu edustaa lamppua.
+
+-----------
+Pelaaminen:
+-----------
+
+Pelin tarkoituksena on saada sammutettua kaikki lamput laudalta. Tämä tapahtuu
+kytkemällä lamppuja päälle ja pois päältä painamalla lamppuja. Kuitenkin kun kytket
+yhden lampun jokainen sen naapuri kytkeytyy myös.
+
+Voit alustaa pelitilanteen painamalla pelilaudan alareunassa olevaa reset-nappia.
+Randomize-nappia painamalla voit sekoittaa pelitilanteen satunnaiseksi.
+
+Ylävalikosta löydät New Game-valikon, jonka avulla voit aloittaa uuden pelin uusilla
+asetuksilla.
